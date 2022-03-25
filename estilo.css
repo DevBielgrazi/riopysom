@@ -1,0 +1,96 @@
+body{
+    background-color: white;
+}
+h1, h2{
+    color: rgb(5, 5, 77);
+    font-family: OCR A Std, monospace;
+}
+h3{
+    color:dodgerblue;
+    font-family: OCR A Std, monospace;
+    font-size: 15px;
+}
+h4{
+    color:rgb(5, 5, 77);
+    font-family:OCR A Std, monospace;
+}
+h5{
+    color:yellow;
+    font-family:OCR A Std, monospace;
+    font-size: 20px;
+}
+h6{
+    color:red;
+    font-family:OCR A Std, monospace;
+    font-size: 20px;
+}
+h7{
+    color:green;
+    font-family:OCR A Std, monospace;
+    font-size: 20px;
+}
+button{
+    background-color: rgb(5, 5, 77);
+    color: white;
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+    border-radius: 10px;
+}
+menu{
+    position:absolute;
+    top:10px;
+    left:0px;
+}
+pag{
+    position:absolute;
+    top:50px;
+    left:400px;
+}
+urn{
+    position:absolute;
+    top:50px;
+    left:380px;
+}
+urc{
+    position:absolute;
+    top:520px;
+    left:-100px;
+}
+urd{
+    position:absolute;
+    top:5px;
+    left:550px;
+}
+rn{
+    position:absolute;
+    top:50px;
+    left:325px;
+}
+input, select{
+    background-color: dodgerblue;
+    color:rgb(5, 5, 77);
+    font-size: 20px;
+}
+.inputb{
+    background-color:dodgerblue;
+    color:rgb(5, 5, 77);
+    font-size: 20px;
+    border-radius: 20px;
+    border-color: dodgerblue;
+}
+table{
+    align-items: center;
+    text-align: center;
+    border-style: outset;
+    border-radius: 10px;
+    border-color:gray;
+    padding: 0%;
+}
+.tableb{
+    background-color: dodgerblue;
+    align-items: left;
+    text-align: left;
+    border-style: inset;
+    border-radius: 10px;
+    border-color:gray;
+}
