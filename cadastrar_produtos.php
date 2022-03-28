@@ -18,8 +18,9 @@
 	require('connect.php');
 	
 	$pro_pro = trim($_POST['pro_pro']);
-    $pro_pre = trim($_POST['pre_pro']);
-    $pro_cus = trim($_POST['cus_pro']);
+	$qua_pro = trim($_POST['qua_pro']);
+    $cus_pro = trim($_POST['cus_pro']);
+    $pre_pro = trim($_POST['pre_pro']);
 		
 	$sql = mysqli_query($conn,"SELECT * FROM $tab_pro WHERE `produto` = '$pro_pro'");
 	
@@ -41,8 +42,9 @@
 	else
 	{	
         $data = date('Y/m/d');
-        $pro_luc = ($pro_pre-$pro_cus);		
-		$sql = mysqli_query($conn,"INSERT INTO $tab_pro (`cadastro`, `produto`, `quantidade`, `preco`, `custo`, `lucro`)  VALUES ('$data', '$pro_pro', '0', '$pro_pre', '$pro_cus', '$pro_luc')");	
+        $luc_pro = $pre_pro-$cus_pro;
+        $luc2_pro = number_format(((($pre_pro-$cus_pro)/$cus_pro)*100), 0, '.', '');		
+		$sql = mysqli_query($conn,"INSERT INTO $tab_pro (`cadastro`, `produto`, `quantidade`, `preco`, `custo`, `lucro_real`, `lucro`)  VALUES ('$data', '$pro_pro', '$qua_pro', '$pre_pro', '$cus_pro', '$luc_pro', '$luc2_pro')");	
 			
         ?>
             <pag>
@@ -62,10 +64,11 @@
                 <tr>
 					<td><h3>CÓDIGO</h3></td>
 					<td><h3>CADASTRO</h3></td>
-                    <td><h3>PRODUTO</h3></td>
-                    <td><h3>QUANTIDADE</h3></td>
-                    <td><h3>PREÇO</h3></td>
-                    <td><h3>CUSTO</h3></td>
+                    <td><h3>DESCRIÇÃO DO PRODUTO</h3></td>
+                    <td><h3>QUANT</h3></td>
+                    <td><h3>PREÇO<br>UNI</h3></td>
+                    <td><h3>CUSTO<br>UNI</h3></td>
+                    <td><h3>LUCRO<br>REAL</h3></td>
                     <td><h3>LUCRO</h3></td>
                 </tr>		
 <?php   
@@ -81,9 +84,10 @@
                                     <td><h4><nobr><?php echo date( 'd/m/Y' , strtotime( $vn['cadastro']));    ?></nobr></h4></td>
                                     <td><h4><nobr><?php echo $vn['produto'];    ?></nobr></h4></td>
                                     <td><h4><nobr><?php echo $vn['quantidade'];    ?></nobr></h4></td>
-                                    <td><h4><nobr><?php echo $vn['preco'];    ?></nobr></h4></td>
-                                    <td><h4><nobr><?php echo $vn['custo'];    ?></nobr></h4></td>					
-                                    <td><h4><nobr><?php echo $vn['lucro'];    ?></nobr></h4></td>					
+                                    <td><h4><nobr><?php echo "R$".$vn['preco'];    ?></nobr></h4></td>
+                                    <td><h4><nobr><?php echo "R$".$vn['custo'];    ?></nobr></h4></td>					
+                                    <td><h4><nobr><?php echo "R$".$vn['lucro_real'];    ?></nobr></h4></td>					
+                                    <td><h4><nobr><?php echo $vn['lucro']."%";    ?></nobr></h4></td>					
                                 </tr>                                            
                         <?php   $i = $i + 1;
                     }   ?>

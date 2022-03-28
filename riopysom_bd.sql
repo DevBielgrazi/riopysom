@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Mar-2022 às 21:58
+-- Tempo de geração: 28-Mar-2022 às 00:57
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 7.4.27
+-- versão do PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,7 @@ CREATE TABLE `produtos` (
   `quantidade` int(11) NOT NULL,
   `preco` float NOT NULL,
   `custo` float NOT NULL,
+  `lucro_real` float NOT NULL,
   `lucro` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,9 +42,9 @@ CREATE TABLE `produtos` (
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`codigo`, `cadastro`, `produto`, `quantidade`, `preco`, `custo`, `lucro`) VALUES
-(1, '2022-03-25', 'Camiseta', 0, 0, 0, 0),
-(2, '2022-03-25', 'Bone', 0, 8.99, 6.49, 2.5);
+INSERT INTO `produtos` (`codigo`, `cadastro`, `produto`, `quantidade`, `preco`, `custo`, `lucro_real`, `lucro`) VALUES
+(1, '2022-03-28', 'Boné', 35, 45, 50, -5, -10),
+(2, '2022-03-28', 'Boné do Palmeiras Verde', 40, 79999, 12, 79987, 666558);
 
 --
 -- Índices para tabelas despejadas
